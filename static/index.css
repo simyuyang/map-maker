@@ -1,0 +1,31 @@
+.map{
+    width: 800px;
+    height: 800px;
+    object-fit: contain;
+}
+
+.container {
+    font-family: Arial, Helvetica, sans-serif;
+    max-height: 1500px;
+}
+
+.header {
+    text-align: center;
+}
+
+#main-body {
+    display: flex;
+    flex-direction: row;
+    margin: 10px 20px;
+    justify-content: space-evenly;
+}
+
+#lat-input, #lon-input {
+    width: 400px;
+    display: flex;
+    justify-content:space-around;
+}
+
+.label, .variable {
+    margin: 10px;
+}

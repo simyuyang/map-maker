@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>PyGMT simple map maker</title>
+{% endblock %}
+
+
+
+{% block body %}
+<div class="container">
+    <div class="header">
+        <h1 id="title">Create a simple map using inputs with PyGMT!</h1>
+    </div>
+    <div id="main-body">
+        <div id="input-params">
+            <p>Give your input parameters here</p>
+            <form id="map-inputs" action="/" method="POST">
+                <!-- Input coordinates for map region -->
+                <label for="Latitude" class="label">Latitude: </label>
+                
+                <div id="lat-input">
+                <input type="text" id="latmin" name="latmin" class="variable" placeholder="Minimum latitude">
+                <input type="text" id="latmax" name="latmax" class="variable" placeholder="Maximum latitude">
+                </div>
+                <br>
+                <label for="Longitude" class="label">Longitude: </label>
+
+                <div id="lon-input">
+                    <input type="text" id="lonmin" name="lonmin" class="variable" placeholder="Minimum longitude">
+                    <input type="text" id="lonmax" name="lonmax" class="variable" placeholder="Maximum longitude">
+                </div>
+
+                
+                <!-- Input data types for map -->
+                <div id="seismo">
+                    <input type="checkbox" name="seismicity" id="seismicity" class="variable">
+                    <label for="Seismicity" class="label">Plot seismicity</label>
+                </div>
+                <div id="faultlines">
+                    <input type="checkbox" name="faults" id="faults" class="variable">
+                    <label for="Faults" class="label">Plot fault lines</label>
+                </div>
+                <div id="send-input">
+                    <button type="submit">Generate Map</button>
+                </div>
+            </form>
+
+
+        </div>
+
+        <div id="output-map">
+            <img src="{{ url_for('static', filename='maps/map.png') }}" class="map" alt="map made with pygmt">
+        </div>
+    </div>
+</div>
+{% endblock %}
